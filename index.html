@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>What Is ERC-4337, or Account Abstraction for Ethereum?</h1>
+
+    <img src="img/acc.png" alt="account abstraction">
+
+    <p>ERC-4337 is an Ethereum standard that achieves account abstraction on the protocol without any consensus-layer changes. Deployed on the Ethereum mainnet in March 2023, ERC-4337 makes it possible to transact and create contracts in a single contract account. It opens the door to user-friendly crypto wallet designs that could potentially facilitate broader adoption.</p>
+
+    <ul>
+        <li><a href="#h1">Introduction</a></li>
+        <li><a href="#h2">What Is ERC-4337?</a></li>
+        <li><a href="#h3">Why Is ERC-4337 Needed?</a></li>
+        <li><a href="#h4">How Does ERC-4337 Work?</a></li>
+        <li><a href="#h5">What Goals Does ERC-4337 Achieve?</a></li>
+        <li><a href="#h6">What Does ERC-4337 Mean For Users?</a></li>
+        <li><a href="#h7">Closing Thoughts</a></li>
+        <li><a href="#h8">Further Reading:</a></li>
+    </ul>
+
+    <h2 id="h1">Introduction</h2>
+
+    <p>The Ethereum Improvement Proposals (EIPs) describe standards such as core protocol specification and contract standards for the Ethereum platform. Ethereum Request for Comment (ERC) is one type of EIP that sets application-level standards such as contract and token standards. An EIP can only become an ERC once the on-chain governance authorizes the change.</p>
+    <p>ERC-4337 is the latest <a href="https://academy.binance.com/en/articles/an-introduction-to-erc-20-tokens">ERC standard</a> deployed on the Ethereum mainnet to achieve its long-awaited goal of account abstraction. Some still refer to ERC-4337 using its original term, EIP-4337. However, EIP-4337 was initially proposed in 2021 and has been authorized to become ERC-4337 in 2023.</p>
+
+    <h2 id="h2">What Is ERC-4337?</h2>
+
+    <p>ERC-4337 was proposed by Ethereum co-founder Vitalik Buterin and other developers in 2021 to establish account abstraction. It was deployed on the Ethereum mainnet in March 2023 and is expected to herald user-friendly <a href="https://academy.binance.com/en/articles/crypto-wallet-types-explained">crypto wallet</a> designs.</p>
+    <p>In Ethereum, account abstraction aims to combine features of the protocol’s two existing account types: Externally owned accounts (EOA) and smart contract accounts. The outcome is a single contract account able to transact with tokens and create contracts at the same time. This change makes creative wallet designs such as social recovery, customization, and upgradeability possible.</p>
+    <p>Another way to think about ERC-4337 is that it brings <a href="https://academy.binance.com/en/articles/what-are-smart-contracts">smart contract</a> functionality to wallets in a single account. This makes services like multi-factor authentication and automatic payments easier to set up.</p>
+    
+    <h2 id="h3">Why Is ERC-4337 Needed?</h2>
+
+    <p>To see why ERC-4337 is needed, it’s important to understand why it was proposed and implemented in the first place. Unlike the Bitcoin network’s <a href="https://academy.binance.com/en/glossary/unspent-transaction-output-utxo">Unspent Transaction Output</a>(UTXO) module, the Ethereum protocol uses an account-based model. That means the Ethereum protocol keeps track and updates accounts’ available balances as transactions are confirmed.</p>
+    <p>The two types of accounts in Ethereum have their own functionalities. EOAs are owned and controlled by users, while smart contract accounts are smart contracts that are deployed on the network. Both accounts can receive, hold, and send ether or tokens.</p>
+    <p>Most existing crypto wallets on Ethereum, such as <a href="https://academy.binance.com/en/articles/how-to-use-metamask">MetaMask</a>, are EOAs, meaning they are limited by the rules set around EOAs. These limitations include solely relying on private keys to access accounts and requiring all transactions to be signed. Because of this, wallet setup procedures and <a href="https://academy.binance.com/en/glossary/private-key">private key</a> security measures are usually complex and not user-friendly. If users lose their seed phrase, it usually means losing access to the wallet.</p>
+    <p>ERC-4337 removes such limitations. Smart contract wallets such as UniPass and Safe, are wallets managed by smart contract accounts instead of EOAs and can achieve the same goal. However, users must manage their ether in two accounts to pay for <a href="https://academy.binance.com/en/glossary/gas">gas</a> or rely on a centralized relay system. ERC-4337 removes such limitations because it combines the two account’s functionalities into one, making it easier to deploy desired wallet features.</p>
+
+    <h2 id="h4">How Does ERC-4337 Work? </h2>
+
+    <p>The Ethereum community has been working on ways to achieve account abstraction for a long time. Before EIP-4337, the community put forward another proposal aimed at achieving account abstraction called EIP-2938. EIP-2938 was similar to ERC-4337 but called for consensus-layer changes. ERC-4337 circumvents this.</p>
+    <p>It does so by introducing a higher-layer pseudo-transaction object called a UserOperation, which shares similarities to rollups as both involve different versions of the concept of bundling. In ERC-4337, different users send UserOperation objects into a separate mempool. </p>
+    <p>Bundlers package these objects into a transaction, which gets included in a block. The bundlers pay gas for the bundled transactions and get paid fees by the individual UserOperation executions. Bundlers work in similar ways to a validator, choosing which objects to include based on fee-prioritization logic.</p>
+    <p>New functions, including validateUserOp, are also being added to enable a wallet to be a smart contract at the same time. A new contract called the EntryPoint is also being introduced to serve as a security gate for the execution of these new functions.</p>
+
+    <h2 id="h5">What Goals Does ERC-4337 Achieve?</h2>
+
+    <p>The goals ERC-4337 aims to achieve include the following:</p>
+
+    <ul>
+        <li>Account abstraction: Allow users to enjoy a single account with functionalities of smart contracts and EOAs. </li>
+        <li>Decentralization: Allow any so-called bundlers to participate in the process.</li>
+        <li>Avoid consensus changes: Make faster adoption possible as the Ethereum consensus layer focuses on scalability-oriented upgrades.</li>
+        <li>Enable innovative use cases: These could include aggregated signature, setting daily transaction limit, emergency account freezing, whitelisting, and privacy-preserving applications.</li>
+        <li>Save time and <a href="https://academy.binance.com/en/glossary/gas">gas</a>: As bundlers can package UserOperation objects into one transaction, it could save time and gas.</li>
+    </ul>
+
+    <h2 id="h6">What Does ERC-4337 Mean For Users? </h2>
+
+    <p>ERC-4337 could spell the end for the complicated crypto wallet user experience and, in doing so, could also increase adoption. Here are some highlights of what ERC-4337 could enable:</p>
+
+    <ul>
+        <li>Wallet setup: No need to write down seed phrases. Setup can be quick and easy with just a few clicks.</li>
+        <li>Worry-free account recovery: Users no longer need to sweat over losing their seed phrases, as multi-factor authentication and account recovery are now possible. </li>
+        <li>User-friendly wallet functions: Users can enjoy a wide range of customized services including auto-pay, pre-approve transactions, and bundled transactions. The sky's the limit. </li>
+        <li>Better security: Wallets could potentially be more secure as the possibility of human error is reduced — no more hiding seed phrases under your mattress! ERC-4337 should, in theory, lead to a smoother and friendlier user experience for users, therefore removing one major hurdle for mass adoption.</li>
+        <li>Gas flexibility: Wallets powered by ERC-4337 can now pay gas fees with any ERC-20 tokens and beyond. Developers can build wallets that make paying gas fees in any tokens and even fiat possible. </li>
+    </ul>
+
+    <h2 id="h7">Closing Thoughts</h2>
+
+    <p>The terminologies of crypto wallets – such as <a href="https://academy.binance.com/en/glossary/seed-phrase">seed phrases</a>, <a href="https://academy.binance.com/en/glossary/private-key">private keys</a>, and <a href="https://academy.binance.com/en/glossary/address">public keys</a> – can be daunting for new users. The process of using crypto wallets is still challenging for some people. Many agree that the average user’s crypto interface needs to be as simple as possible to accelerate adoption.</p>
+    <p>ERC-4337 lays down the technical foundation to support creative crypto wallets. What developers can build based on this could change the main touch-point between crypto and users. Regardless, the impact that ERC-4337 will have on user experience and crypto as a whole is something to keep an eye on in the coming years.</p>
+
+    <h2 id="h8">Further Reading:</h2>
+    <div>
+        <p><a href="https://academy.binance.com/en/articles/an-introduction-to-erc-20-tokens">An Introduction to ERC-20 Tokens</a></p>
+        <p><a href="https://academy.binance.com/en/articles/what-is-ethereum">What Is Ethereum?</a></p>
+        <p><a href="https://academy.binance.com/en/articles/what-is-the-ethereum-shanghai-upgrade-and-how-will-it-affect-me">What Is the Ethereum Shanghai Upgrade and How Will It Affect Me?</a></p>
+        <p><a href="https://academy.binance.com/en/articles/what-is-eip-4844-in-ethereum-and-how-can-it-benefit-users">What Is EIP-4844 in Ethereum and How Can It Benefit Users?</a></p>
+    </div>
+
+</body>
+</html>
